@@ -12,7 +12,8 @@ import JSZip from "jszip";
 import { saveAs } from "file-saver";
 import { ExportZipButton } from "@/components/export-zip-button";
 import { ExportXmlZipButton } from "@/components/export-json-model-button";
-// import { ExportToAngular } from './lib/export-angular';
+import { PrototipeImageButton } from "@/components/prototipe-button";
+import { InsertarNuevaPaginaDesdeIA } from "@/components/ia-button";
 
 export default function Home() {
   const [editor, setEditor] = useState<Editor>();
@@ -349,9 +350,8 @@ export default function Home() {
         </button>
         <ExportZipButton editor={editor} />
         <ExportXmlZipButton />
-        {/* <button className="border rounded px-2" onClick={()=> ExportToAngular(editor as Editor)}>
-          Exportar Todo a Angular
-        </button> */}
+        <PrototipeImageButton />
+        <InsertarNuevaPaginaDesdeIA editor={editor} />
       </div>
       <div className="flex-1 w-full h-full overflow-hidden">
         <GrapesJsStudio
@@ -363,9 +363,8 @@ export default function Home() {
                 pages: [
                   {
                     name: "Home",
-                    component: `<h1 style="padding: 2rem; text-align: center">
-                      Hello Studio 👋
-                    </h1>`,
+                    component: `
+                    <h1>hola mundo</h1>`,
                   },
                 ],
               },
